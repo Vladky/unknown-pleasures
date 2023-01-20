@@ -42,7 +42,7 @@ export class PulsarCurve extends Curve<Vector2> {
     ])
   }
 
-  getPoint(t: number, optionalTarget = new Vector2()) {
+  getPoint(t: number, optionalTarget: Vector2 = new Vector2(0, 0)) {
     const x = this.length * t + this.v0.x
     // const peakY = range(this.peaksCount).reduce(
     //   (acc, _, i) =>
@@ -55,11 +55,21 @@ export class PulsarCurve extends Curve<Vector2> {
     const y =
       this.noiseParams.reduce((acc, args) => acc + normalPDF(x, ...args), 0) +
       this.peaksParams.reduce(
-        (acc, args) => acc + (this.scale * normalPDF(x, ...args)) / 4,
+        (acc, args) =>
+          acc + (this.scale * normalPDF(x + optionalTarget.x, ...args)) / 4,
         0
       ) +
       this.v0.y
 
     return new Vector2(x, y)
+  }
+  getPoints(divisions: number = 5, peak: number = 0) {
+    const points = []
+
+    for (let d = 0; d <= divisions; d++) {
+      points.push(this.getPoint(d / divisions, new Vector2(peak, 0)))
+    }
+
+    return points
   }
 }

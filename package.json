@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "camera-controls": "^1.37.6",
+    "gsap": "^3.11.4",
     "lodash": "^4.17.21",
     "three": "^0.147.0"
   }

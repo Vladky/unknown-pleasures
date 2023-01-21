@@ -1,7 +1,7 @@
 import { mean, range } from 'lodash'
 import random from 'lodash/random'
 
-export const randomNormalized = (mu: number, sigma: number, seed?: number) => {
+export const randomNormalized = (mu: number, sigma: number) => {
   const norm = mean(range(6).map(() => random(-1.0, 1.0, true)))
   return mu + sigma * norm
 }

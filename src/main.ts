@@ -2,7 +2,6 @@ import { PulsarCurve } from './PulsarCurve'
 import * as THREE from 'three'
 import CameraControls from 'camera-controls'
 import { clamp, range, throttle } from 'lodash'
-import { Vector3 } from 'three'
 import { Line2 } from 'three/examples/jsm/lines/Line2'
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial'
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry'
@@ -168,15 +167,15 @@ const init = () => {
 
   // scene.add(new THREE.GridHelper(100, 10))
 
-  const centralLineGeometry = new THREE.BufferGeometry().setFromPoints([
-    new Vector3(100, -1000, 0),
-    new Vector3(100, 1000, 0),
-  ])
-  const centralLineMaterial = new THREE.LineBasicMaterial({
-    color: 0x3f3f3f,
-    opacity: 0.5,
-  })
-  const centralLine = new THREE.Line(centralLineGeometry, centralLineMaterial)
+  // const centralLineGeometry = new THREE.BufferGeometry().setFromPoints([
+  //   new Vector3(100, -1000, 0),
+  //   new Vector3(100, 1000, 0),
+  // ])
+  // const centralLineMaterial = new THREE.LineBasicMaterial({
+  //   color: 0x3f3f3f,
+  //   opacity: 0.5,
+  // })
+  // const centralLine = new THREE.Line(centralLineGeometry, centralLineMaterial)
   // scene.add(centralLine)
   // setting curves
 

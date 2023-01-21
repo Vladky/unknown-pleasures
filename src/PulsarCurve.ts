@@ -29,7 +29,7 @@ export class PulsarCurve extends Curve<Vector2> {
     this.length = Math.abs(v0.x - v1.x)
 
     const modesCount = this.scale / 1.5
-    this.noiseParams = range(modesCount).map((_, i) => [
+    this.noiseParams = range(modesCount).map(() => [
       random(v0.x, v1.x),
       randomNormalized(1.1, 1),
     ])

@@ -235,6 +235,8 @@ const init = () => {
 
   cameraControls.dampingFactor = 0.15
   cameraControls.draggingDampingFactor = 0.15
+	cameraControls.touches.one = CameraControls.ACTION.NONE
+	cameraControls.touches.two = CameraControls.ACTION.TOUCH_ROTATE
   window.addEventListener('resize', updateSize)
   document.addEventListener('pointermove', throttle(onPointerMove, 1))
   document.addEventListener('keypress', e => {
